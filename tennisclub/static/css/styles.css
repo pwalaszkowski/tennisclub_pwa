@@ -1,0 +1,730 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* White background */
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #2d6a4f; /* Deep green - Tennis ball green */
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: white;
+}
+
+nav {
+  background-color: #fff; /* White background for contrast */
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #2d6a4f; /* Deep green */
+  font-weight: bold;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #d9ead3; /* Light green-yellow for hover */
+  color: #2d6a4f; /* Dark green for contrast */
+  border-radius: 4px;
+}
+
+main {
+  padding: 20px;
+  background-color: #f4f4f4; /* Light gray background */
+  text-align: center;
+}
+
+main h2 {
+  color: #333;
+}
+
+main p {
+  color: #666; /* Darker gray for paragraph text */
+}
+
+main ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+main ul li {
+  background-color: #fff3cd; /* Light yellow - Tennis ball-like */
+  border: 1px solid #ffcc00; /* Yellow border for accent */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #2d6a4f; /* Dark green - Tennis ball green */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Email link style */
+.email-link {
+  text-decoration: none;
+  color: #2d6a4f; /* Deep green */
+  font-weight: bold;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.email-link:hover {
+  background-color: #d9ead3; /* Light green-yellow for hover */
+  color: #2d6a4f; /* Dark green for contrast */
+  border-radius: 4px;
+}
+
+/* Register Form */
+.register-form {
+    width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Spread label and input */
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #2d6a4f; /* Deep green - Tennis ball green */
+    color: white; /* White text for contrast */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #40916c; /* Slightly lighter green for hover */
+    color: #fff; /* Ensure text stays white */
+}
+
+.btn-secondary {
+    background-color: #e63946; /* Soft red - Contrasts with green */
+    color: white; /* White text for readability */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* Ensure no underline */
+}
+
+.btn-secondary:hover {
+    background-color: #d62828; /* Darker red for hover */
+    color: #fff; /* Ensure text stays white */
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Alert Success */
+.alert-success {
+    color: green;
+    background-color: #e6ffe6;
+    border: 1px solid green;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Alert Error  */
+.alert-error {
+    color: red;
+    background-color: #ffe6e6;
+    border: 1px solid red;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Optional: Close Button for Alerts */
+.alert .close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    color: inherit;
+    text-shadow: none;
+    opacity: 0.75;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.alert .close:hover {
+    opacity: 1;
+}
+
+/* Table Styling */
+.table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Collapse borders */
+    margin: 20px 0;
+    background-color: #fff; /* White background for the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    border: 1px solid #ddd; /* Add a border around the table */
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd; /* Add border to table cells */
+    text-align: left;
+}
+
+.table th {
+    background-color: #f4f4f4; /* Light gray header background */
+    color: #2d6a4f; /* Deep green for header text */
+    font-weight: bold; /* Bold text for headers */
+}
+
+.table tbody tr {
+    background-color: #fff; /* White row background */
+}
+
+.table tbody tr:hover {
+    background-color: #f4f4f4; /* Light gray row hover background */
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr td {
+    color: #333; /* Darker text color for readability */
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+/* Checkbox Styling */
+.table tbody tr td input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    accent-color: #2d6a4f; /* Green color for checkboxes */
+    cursor: pointer;
+}
+
+/* Selected Checkbox (Optional) */
+.table tbody tr td input[type="checkbox"]:checked {
+    background-color: #d9ead3; /* Light green background for checked state */
+    border-color: #2d6a4f; /* Deep green border */
+}
+
+/* Login Page */
+/* Container for login form */
+.login-container {
+    max-width: 450px;
+    width: 100%;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto; /* Center the container horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center using CSS transform */
+}
+
+/* Heading styling */
+.login-heading {
+    color: #006400; /* Dark green for heading */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+.login-label {
+    flex: 1; /* Take up one part of the row */
+    text-align: left; /* Align text to the left */
+    color: #333;
+    font-size: 0.9em;
+    margin-right: 10px; /* Add spacing between label and input */
+}
+
+/* Input field styling */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-control:focus {
+    border-color: #006400;
+    box-shadow: 0 0 8px rgba(0, 100, 0, 0.3);
+}
+
+/* Login button styling */
+.login-button {
+    background-color: #006400; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #004d00; /* Darker green on hover */
+}
+
+/* Register link styling */
+.register-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.register-anchor {
+    color: #008000; /* Green */
+    text-decoration: none;
+}
+
+.register-anchor:hover {
+    text-decoration: underline;
+}
+
+/* Registration Page */
+/* Container for registration form */
+.registration-container {
+    max-width: 450px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Heading styling */
+.registration-heading {
+    color: #006400;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.registration-label {
+    flex: 1; /* Take up one part of the row */
+    text-align: left; /* Align text to the left */
+    color: #333;
+    font-size: 0.9em;
+    margin-right: 10px; /* Add spacing between label and input */
+}
+
+/* Input field styling */
+.form-control {
+    flex: 2; /* Take up more space for input fields */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-control:focus {
+    border-color: #006400;
+    box-shadow: 0 0 8px rgba(0, 100, 0, 0.3);
+}
+
+/* Register button styling */
+.registration-button {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.registration-button:hover {
+    background-color: #004d00;
+}
+
+/* Login link styling */
+.login-link {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.login-anchor {
+    color: #008000;
+    text-decoration: none;
+}
+
+.login-anchor:hover {
+    text-decoration: underline;
+}
+
+/* Home Page */
+/* General container styling for home page */
+.home-container {
+    max-width: 1366px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styling */
+.home-heading {
+    color: #006400; /* Dark green for the heading */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Description styling */
+.home-description {
+    font-size: 1.0em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-heading {
+        font-size: 2em;
+    }
+
+    .home-description {
+        font-size: 1em;
+    }
+}
+
+/* Members Page */
+/* General container styling for members page */
+.members-container {
+    max-width: 1366px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styling */
+.members-heading {
+    color: #006400; /* Dark green for the heading */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Description styling */
+.members-description {
+    font-size: 1.0em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .members-heading {
+        font-size: 1.8em;
+    }
+
+    .members-description {
+        font-size: 1em;
+    }
+}
+
+/* Courts Page */
+/* General container styling for courts page */
+.courts-container {
+    max-width: 1366px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styling */
+.courts-heading {
+    color: #006400; /* Dark green for the heading */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Description styling */
+.courts-description {
+    font-size: 1.0em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .courts-heading {
+        font-size: 1.8em;
+    }
+
+    .courts-description {
+        font-size: 1em;
+    }
+}
+
+/* About Page */
+/* General container styling */
+.about-container {
+    max-width: 1366px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styling */
+.about-heading {
+    color: #006400; /* Dark green for the heading */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Description styling */
+.about-description {
+    font-size: 1.0em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-heading {
+        font-size: 1.8em;
+    }
+
+    .about-description {
+        font-size: 1em;
+    }
+}
+
+/* Contact Page */
+/* General container styling */
+.contact-container {
+    max-width: 1366px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styling */
+.contact-heading {
+    color: #006400; /* Dark green for the heading */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Text styling */
+.contact-text {
+    font-size: 1.0em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Email link styling */
+.email-link {
+    color: #008000; /* Green email link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+    color: #006400; /* Darker green on hover */
+}
+
+/* Registration Page */
+/* Container for registration form */
+.registration-container {
+    max-width: 450px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Heading styling */
+.registration-heading {
+    color: #006400;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.registration-label {
+    flex: 1; /* Take up one part of the row */
+    text-align: left; /* Align text to the left */
+    color: #333;
+    font-size: 0.9em;
+    margin-right: 10px; /* Add spacing between label and input */
+}
+
+/* Input field styling */
+.form-control {
+    flex: 2; /* Take up more space for input fields */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-control:focus {
+    border-color: #006400;
+    box-shadow: 0 0 8px rgba(0, 100, 0, 0.3);
+}
+
+/* Register button styling */
+.registration-button {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.registration-button:hover {
+    background-color: #004d00;
+}
+
+/* Login link styling */
+.login-link {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.login-anchor {
+    color: #008000;
+    text-decoration: none;
+}
+
+.login-anchor:hover {
+    text-decoration: underline;
+}
+
+nav ul li a.logout {
+    float: right; /* Position logout button to the right */
+    color: white; /* Ensure contrast with green */
+    background-color: #d9ead3; /* Green-yellow from the hover styles */
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a.logout:hover {
+    background-color: #2d6a4f; /* Deep green hover for logout button */
+    color: white;
+}
+
+.install-button {
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}

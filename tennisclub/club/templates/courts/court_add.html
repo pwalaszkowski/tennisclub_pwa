@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Add Court{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <div class="form-container">
+    <h2 class="courts-heading">Add New Court</h2>
+
+    {% if messages %}
+    <div>
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name" class="registration-label">Court Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="location" class="registration-label">Location:</label>
+            <input type="text" id="location" name="location" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="surface" class="registration-label">Surface Type:</label>
+            <select id="surface" name="surface" class="form-control" required>
+                <option value="clay">Clay</option>
+                <option value="grass">Grass</option>
+                <option value="hard">Hard</option>
+                <option value="synthetic">Synthetic</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="lighting" class="registration-label">Lighting:</label>
+            <select id="lighting" name="lighting" class="form-control" required>
+                <option value="none">None</option>
+                <option value="standard">Standard</option>
+                <option value="led">LED</option>
+            </select>
+        </div>
+        <div class="form-group" >
+            <label for="indoor_outdoor" class="registration-label">Indoor/Outdoor:</label>
+            <select id="indoor_outdoor" name="indoor_outdoor" class="form-control" required>
+                <option value="indoor">Indoor</option>
+                <option value="outdoor">Outdoor</option>
+                <option value="both">Both</option>
+            </select>
+        </div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'courts' %}" class="btn btn-secondary">Discard Changes</a>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

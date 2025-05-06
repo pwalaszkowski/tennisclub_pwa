@@ -1,0 +1,42 @@
+# Byte-compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+.venv
+*.env
+
+# Django database
+db.sqlite3
+*.sqlite3
+
+# Django migrations
+migrations/
+
+# Django static files
+staticfiles/
+
+# Media files (user uploads)
+media/
+
+# Secrets and configuration
+.env
+*.key
+
+# VSCode settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# JetBrains project files
+*.iml
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db

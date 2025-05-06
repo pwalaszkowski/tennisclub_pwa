@@ -1,0 +1,6 @@
+pip~=24.3.1
+django~=5.1.4
+pylint~=3.3.3
+djangorestframework~=3.15.2
+djangorestframework-simplejwt~=5.3.1
+django-pwa

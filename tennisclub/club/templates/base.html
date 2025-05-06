@@ -1,0 +1,88 @@
+{% load static %} <!-- Load static files -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- manifest -->
+    <link rel="manifest" href="{% url 'manifest' %}">
+
+    <!-- icons -->
+    <link rel="apple-touch-icon" href="/static/images/icons/icon-512x512.png">
+    <meta name="theme-color" content="#0A0302">
+
+    <!-- service worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("{% url 'serviceworker' %}")
+          .then(function(registration) {
+            console.log('ServiceWorker registered with scope:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('ServiceWorker registration failed:', error);
+          });
+      }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<script>
+  let deferredPrompt;
+  const installBtn = document.getElementById('install-btn');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Block default browser prompt
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'block';
+
+    installBtn.addEventListener('click', () => {
+      installBtn.style.display = 'none';
+      deferredPrompt.prompt();
+
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User installed application correctly');
+        } else {
+          console.log('Installation canceled');
+        }
+        deferredPrompt = null;
+      });
+    });
+  });
+</script>
+
+<!-- Header Section -->
+<header>
+    <h1>WSB Tennis Club</h1>
+    <!-- Future logo space -->
+</header>
+
+<!-- Navigation Section -->
+<nav>
+    <ul>
+            <li><a href="{% url 'main' %}">Home</a></li>
+            <li><a href="{% url 'members' %}">Members</a></li>
+            <li><a href="{% url 'courts' %}">Courts</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li> <!-- Logout button -->
+
+    </ul>
+</nav>
+
+<!-- Main Content Section -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 WSB Tennis Club. All Rights Reserved.</p>
+    <button class="login-button">Zainstaluj aplikację</button>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Club - Register</title>
+    {% load static %} <!-- Load static files -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="registration-container">
+    <h2 class="registration-heading">Tennis Club - Register</h2>
+    {% if messages %}
+    <div>
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <form action="{% url 'member_registration' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username" class="registration-label">Username:</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="first_name" class="registration-label">First Name:</label>
+            <input type="text" id="first_name" name="first_name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name" class="registration-label">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email" class="registration-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="phone_number" class="registration-label">Phone Number:</label>
+            <input type="tel" id="phone_number" name="phone_number" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="date_of_birth" class="registration-label">Date of Birth:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="address" class="registration-label">Address:</label>
+            <input type="text" id="address" name="address" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="membership_type" class="registration-label">Membership Type:</label>
+            <select id="membership_type" name="membership_type" class="form-control" required>
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+                <option value="VIP">VIP</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="role" class="registration-label">Role:</label>
+            <select id="role" name="role" class="form-control" required>
+                <option value="member">Member</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="password" class="registration-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="registration-button">Register</button>
+    </form>
+    <p class="login-link">
+        Already have an account? <a href="{% url 'login' %}" class="register-anchor">Login here</a>.
+    </p>
+</div>
+</body>
+</html>

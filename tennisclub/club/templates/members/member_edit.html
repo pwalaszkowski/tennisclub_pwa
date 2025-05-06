@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Tennis Club - Courts{% endblock %}
+
+{% block content %}
+<div class="courts-container">
+    <h1 class="courts-heading">Edit Profile</h1>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <p class="courts-description">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_first_name" class="registration-label">First Name</label>
+            {{ form.first_name }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_last_name" class="registration-label">Last Name</label>
+            {{ form.last_name }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_email" class="registration-label">Email</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_phone_number" class="registration-label">Phone Number</label>
+            {{ form.phone_number }}
+        </div>
+
+        <div class="form-group" >
+            <label for="id_address" class="registration-label">Address</label>
+            {{ form.address }}
+        </div>
+
+        <div class="form-group" >
+            <label for="id_date_of_birth" class="registration-label">Date of Birth</label>
+            {{ form.date_of_birth }}
+        </div>
+
+        <div class="form-group" >
+            <label for="id_membership_type" class="registration-label">Membership Type</label>
+            {{ form.membership_type }}
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'members' %}" class="btn btn-secondary">Discard Changes</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

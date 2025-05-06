@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Tennis Club - Courts{% endblock %}
+
+{% block content %}
+<div class="courts-container">
+    <h1 class="courts-heading">Our Courts</h1>
+
+    {% if messages %}
+    <div>
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <p class="courts-description">
+        Information about our tennis courts, including location and availability.
+    <p class="courts-description">
+        Court is not visible? add it here <a href="{% url 'court_add' %}" class="email-link">Add Court</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Surface</th>
+                <th>Lighting</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for court in courts %}
+            <tr>
+                <td>{{ court.name }}</td>
+                <td>{{ court.location }}</td>
+                <td>{{ court.get_surface_display }}</td>
+                <td>{{ court.get_lighting_display }}</td>
+                <td>{{ court.get_indoor_outdoor_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+  <h1 class="courts-heading">Your Reservations</h1>
+  <p class="courts-description">
+    Want to reserve court? <a href="{% url 'court_reservation' %}" class="email-link">Reserve Court</a>
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Court</th>
+            <th>Date</th>
+            <th>Time Slot</th>
+            <th>Member</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation.court.name }}</td>
+            <td>{{ reservation.date }}</td>
+            <td>{{ reservation.timeslot }}</td>
+            <td>{{ reservation.member }}</td>
+            <td>
+            <a href="{% url 'court_reservation_edit' reservation.id %}" class="btn btn-primary">Edit</a>
+                <form action="{% url 'courts' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="selected_reservations" value="{{ reservation.id }}">
+                    <button type="submit" name="delete_selected" class="btn btn-secondary">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

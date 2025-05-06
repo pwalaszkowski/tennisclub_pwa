@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Tennis Club - Members{% endblock %}
+
+{% block content %}
+<div class="members-container">
+    <h1 class="members-heading">Our Members</h1>
+    <p class="members-description">
+        List of current members. Want to edit your profile?
+        <a href="{% url 'member_edit' %}" class="email-link">Edit Profile</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Date of Birth</th>
+                <th>Membership Type</th>
+                <th>Joined Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.username }}</td>
+                <td>{{ member.first_name }}</td>
+                <td>{{ member.last_name }}</td>
+                <td>{{ member.email }}</td>
+                <td>{{ member.phone_number }}</td>
+                <td>{{ member.date_of_birth }}</td>
+                <td>{{ member.membership_type }}</td>
+                <td>{{ member.joined_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

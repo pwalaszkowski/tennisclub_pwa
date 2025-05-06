@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Club - Login</title>
+    {% load static %} <!-- Load static files -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="login-container">
+    <h2 class="login-heading">Tennis Club - Login</h2>
+    {% if messages %}
+    <div>
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username" class="login-label">Username:</label>
+            <input type="text" id="username" name="username" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password" class="login-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control">
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+    <p class="register-link">
+        Don't have an account? <a href="{% url 'member_registration' %}" class="register-anchor">Register here</a>.
+    </p>
+</div>
+</body>
+</html>
